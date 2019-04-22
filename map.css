@@ -1,0 +1,22 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+.map {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+}
+#menu {
+    position: absolute;
+    top: 15px;
+    left: 50px;
+    z-index: 1000;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    font-family: 'Roboto','sans-serif';
+    line-height: 10px;
+}
+#wrapper { position: absolute; width: 100vw; height: 100%}
