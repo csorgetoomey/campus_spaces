@@ -11,13 +11,8 @@ L.easyButton( 'fa-crosshairs', function(btn, map){
 
 }).addTo(map);
 
-// loading GeoJSON file - Here my html and usa_adm.geojson file resides in same folder
-$.getJSON("uw_buildings.json",function(data){
-// L.geoJson function is used to parse geojson file and load on to map
-L.geoJson(data).addTo(map);
-});
+//needs to be EPSG:4326 when exporting -> save as
 
-$.getJSON("wagda_wagda_UW_SEATTLE_BUILDINGS.json",function(data){
-// L.geoJson function is used to parse geojson file and load on to map
+$.getJSON("uw_buildings.geojson",function(data){
 L.geoJson(data).addTo(map);
 });
