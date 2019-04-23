@@ -25,17 +25,19 @@ $.getJSON("UW_SEATTLE_BUILDINGS_DIVERSITY.geojson",function(data){
     L.geoJson(data, {style: diversityStyle}).addTo(diversity);
 });
 
-function greenspaceStyle() {
-    return {stroke: false, fill: true, fillColor: "green", fillOpacity: .8};
-}
+// function greenspaceStyle() {
+//     return {stroke: false, fill: true, fillColor: "green", fillOpacity: .8};
+// }
 
 function diversityStyle() {
     return {stroke: false, fill: true, fillColor: "yellow", fillOpacity: .8};
 }
+
+var baselayers ={};
 
 var overlayMaps = {
     "Greenspace": greenspace,
     "Diversity": diversity,
 };
 
-L.control.layers(overlayMaps).addTo(map);
+L.control.layers(baselayers, overlayMaps).addTo(map);
