@@ -15,13 +15,13 @@ L.easyButton( 'fa-crosshairs', function(btn, map){
 //needs to be EPSG:4326 when exporting -> save as
 
 $.getJSON("UW_SEATTLE_LANDSCAPE_GREENSPACE.geojson",function(data){
-var greenspace = L.geoJson(data, {style: styleFunction}).addTo(map);
+var greenspace = L.geoJson(data, {style: greenspaceStyle}).addTo(map);
 });
 
 $.getJSON("UW_SEATTLE_BUILDINGS_DIVERSITY.geojson",function(data){
 var diversity = L.geoJson(data).addTo(map);
 });
 
-function styleFunction(){
-  return {color: "green"};
+function greenspaceStyle(){
+  return {color: "green", stroke: false, fill: true};
 }
