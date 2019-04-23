@@ -1,4 +1,5 @@
 
+
 var map = L.map('map').setView([47.655548, -122.303200], 16);
 
 L.tileLayer('', {
@@ -9,7 +10,8 @@ L.tileLayer('', {
 }).addTo(map);
 
 L.easyButton( 'fa-crosshairs', function(btn, map){
-    map.panTo(new L.LatLng(47.655548, -122.303200));
+    //map.panTo(new L.LatLng(47.655548, -122.303200));
+    map.setView(new L.LatLng(47.655548, -122.303200), 16);
 }).addTo(map);
 
 controlLayer = L.control.layers().addTo(map);
