@@ -9,7 +9,7 @@ L.tileLayer('', {
 }).addTo(map);
 
 L.easyButton( 'fa-crosshairs', function(btn, map){
-
+    map.panTo(new L.LatLng(47.655548, -122.303200));
 }).addTo(map);
 
 controlLayer = L.control.layers().addTo(map);
@@ -42,6 +42,6 @@ $.getJSON("UW_SEATTLE_BUILDINGS_STUDY.geojson",function(data){
 
 //study and social both
 $.getJSON("UW_SEATTLE_BUILDINGS_STUDY_SOCIAL_INTERSECTION.geojson",function(data){
-    var studySocial = L.geoJson(data, {style: {stroke: false, fill: true, fillColor: "blue", fillOpacity: .5}}).addTo(map);
+    var studySocial = L.geoJson(data, {style: {stroke: false, fill: true, fillColor: "purple", fillOpacity: .5}}).addTo(map);
     controlLayer.addOverlay(studySocial, "Study and Social Space");
 });
