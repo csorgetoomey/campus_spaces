@@ -1,3 +1,4 @@
+
 var map = L.map('map').setView([47.655548, -122.303200], 15);
 
 L.tileLayer('', {
@@ -13,6 +14,6 @@ L.easyButton( 'fa-crosshairs', function(btn, map){
 
 //needs to be EPSG:4326 when exporting -> save as
 
-$.getJSON("uw_buildings.geojson",function(data){
+$.getJSON("UW_SEATTLE_LANDSCAPE_GREENSPACE.geojson",function(data){
 L.geoJson(data).addTo(map);
 });
