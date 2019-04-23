@@ -18,24 +18,30 @@ controlLayer = L.control.layers().addTo(map);
 
 //greenspace
 $.getJSON("UW_SEATTLE_LANDSCAPE_GREENSPACE.geojson",function(data){
-    var greenspace = L.geoJson(data, {style: {stroke: false, fill: true, fillColor: "green", fillOpacity: .8}}).addTo(map);
+    var greenspace = L.geoJson(data, {style: {stroke: false, fill: true, fillColor: "green", fillOpacity: .5}}).addTo(map);
     controlLayer.addOverlay(greenspace, "Green Space");
 });
 
 //diversity
 $.getJSON("UW_SEATTLE_BUILDINGS_DIVERSITY.geojson",function(data){
-    var diversity = L.geoJson(data, {style: {stroke: false, fill: true, fillColor: "yellow", fillOpacity: .8}}).addTo(map);
+    var diversity = L.geoJson(data, {style: {stroke: false, fill: true, fillColor: "yellow", fillOpacity: .5}}).addTo(map);
     controlLayer.addOverlay(diversity, "Diversity Space");
 });
 
 //social
 $.getJSON("UW_SEATTLE_BUILDINGS_SOCIAL.geojson",function(data){
-    var social = L.geoJson(data, {style: {stroke: false, fill: true, fillColor: "red", fillOpacity: .8}}).addTo(map);
+    var social = L.geoJson(data, {style: {stroke: false, fill: true, fillColor: "red", fillOpacity: .5}}).addTo(map);
     controlLayer.addOverlay(social, "Social Space");
 });
 
 //study
 $.getJSON("UW_SEATTLE_BUILDINGS_STUDY.geojson",function(data){
-    var study = L.geoJson(data, {style: {stroke: false, fill: true, fillColor: "blue", fillOpacity: .8}}).addTo(map);
+    var study = L.geoJson(data, {style: {stroke: false, fill: true, fillColor: "blue", fillOpacity: .5}}).addTo(map);
     controlLayer.addOverlay(study, "Study Space");
+});
+
+//study and social both
+$.getJSON("UW_SEATTLE_BUILDINGS_STUDY_SOCIAL_INTERSECTION.geojson",function(data){
+    var studySocial = L.geoJson(data, {style: {stroke: false, fill: true, fillColor: "blue", fillOpacity: .5}}).addTo(map);
+    controlLayer.addOverlay(studySocial, "Study and Social Space");
 });
