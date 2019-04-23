@@ -12,23 +12,16 @@ L.easyButton( 'fa-crosshairs', function(btn, map){
 
 }).addTo(map);
 
+L.control.layers().addTo(map);
+
 //needs to be EPSG:4326 when exporting -> save as
 
-var greenspace = L.geoJson();
-var diversity = L.geoJson();
-
 $.getJSON("UW_SEATTLE_LANDSCAPE_GREENSPACE.geojson",function(data){
-    L.geoJson(data, {style: {stroke: false, fill: true, fillColor: "green", fillOpacity: .8}}).addTo(greenspace).addTo(map);
+    var greenspace = L.geoJson(data, {style: {stroke: false, fill: true, fillColor: "green", fillOpacity: .8}}).addTo(map);
+    controlLayers.addOverlay(greenspace, "Green Space");
 });
 
 $.getJSON("UW_SEATTLE_BUILDINGS_DIVERSITY.geojson",function(data){
-    L.geoJson(data, {style: {stroke: false, fill: true, fillColor: "yellow", fillOpacity: .8}}).addTo(diversity).addTo(map);
+    var diversity = L.geoJson(data, {style: {stroke: false, fill: true, fillColor: "yellow", fillOpacity: .8}}).addTo(map);
+    controlLayers.addOverlay(diversity, "Diversity Space");
 });
-
-var baselayers = {};
-var overlayMaps = {
-    "Greenspace": greenspace,
-    "Diversity": diversity,
-};
-
-L.control.layers(baselayers, overlayMaps).addTo(map);
