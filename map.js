@@ -14,14 +14,15 @@ L.easyButton( 'fa-crosshairs', function(btn, map){
 
 //needs to be EPSG:4326 when exporting -> save as
 
-var greenspaceGroup = L.geoJson();
+var greenspace = L.geoJson();
+var diversity = L.geoJson();
 
 $.getJSON("UW_SEATTLE_LANDSCAPE_GREENSPACE.geojson",function(data){
-    var greenspace = L.geoJson(data, {style: greenspaceStyle}).addTo(greenspaceGroup);
+    L.geoJson(data, {style: {stroke: false, fill: true, fillColor: "green", fillOpacity: .8}}).addTo(greenspace);
 });
 
 $.getJSON("UW_SEATTLE_BUILDINGS_DIVERSITY.geojson",function(data){
-    var diversity = L.geoJson(data, {style: diversityStyle}).addTo(map);
+    L.geoJson(data, {style: diversityStyle}).addTo(diversity);
 });
 
 function greenspaceStyle() {
