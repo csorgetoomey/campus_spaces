@@ -17,3 +17,7 @@ L.easyButton( 'fa-crosshairs', function(btn, map){
 $.getJSON("UW_SEATTLE_LANDSCAPE_GREENSPACE.geojson",function(data){
 L.geoJson(data).addTo(map);
 });
+
+$.getJSON("UW_SEATTLE_BUILDINGS_DIVERSITY.geojson",function(data){
+L.geoJson(data).addTo(map);
+});
