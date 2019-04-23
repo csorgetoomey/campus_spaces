@@ -30,7 +30,6 @@ function diversityStyle() {
     return {stroke: false, fill: true, fillColor: "yellow", fillOpacity: .8};
 }
 
-var greenspace = L.layerGroup([greenspace]);
 var overlayMaps = {
     "Greenspace": greenspace
 };
