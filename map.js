@@ -23,5 +23,5 @@ var diversity = L.geoJson(data).addTo(map);
 });
 
 function greenspaceStyle(){
-  return {color: "green", stroke: false, fill: true};
+  return {color: "red", stroke: false, fill: true, fillColor: "green", fillOpacity: 1};
 }
