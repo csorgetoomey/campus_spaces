@@ -19,5 +19,5 @@ var greenspace = L.geoJson(data).addTo(map);
 });
 
 $.getJSON("UW_SEATTLE_BUILDINGS_DIVERSITY.geojson",function(data){
-var diversity = L.geoJson(data, {style: color: 'white',}).addTo(map);
+var diversity = L.geoJson(data).addTo(map);
 });
