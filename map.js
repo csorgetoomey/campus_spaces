@@ -34,8 +34,8 @@ function diversityStyle() {
 }
 
 var overlayMaps = {
-    "Greenspace": greenspace
-    "Diversity": diversity
+    "Greenspace": greenspace,
+    "Diversity": diversity,
 };
 
 L.control.layers(overlayMaps).addTo(map);
