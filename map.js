@@ -3,7 +3,7 @@
 var map = L.map('map').setView([47.655548, -122.303200], 16);
 
 L.tileLayer('', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    attribution: '',
     maxZoom: 18,
 }).addTo(map);
 
@@ -17,7 +17,7 @@ controlLayer = L.control.layers().addTo(map);
 
 //greenspace
 $.getJSON("UW_SEATTLE_LANDSCAPE_GREENSPACE.geojson",function(data){
-    var greenspace = L.geoJson(data, {style: {stroke: false, fill: true, fillColor: "green", fillOpacity: .5}}).addTo(map);
+    var greenspace = L.geoJson(data, {style: {stroke: false, fillColor: "green", fillOpacity: .5}}).addTo(map);
     controlLayer.addOverlay(greenspace, "Green Space");
 });
 
