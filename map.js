@@ -1,7 +1,7 @@
 
 var map = L.map('map').setView([47.655548, -122.303200], 16);
 
-L.tileLayer('', { attribution: '', maxZoom: 18}).addTo(map);
+L.tileLayer('', { attribution: 'Sources: UW Libraries', maxZoom: 18}).addTo(map);
 
 L.easyButton( 'fa-crosshairs', function(btn, map){
     map.setView(new L.LatLng(47.655548, -122.303200), 16);
