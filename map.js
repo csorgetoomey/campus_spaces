@@ -12,31 +12,31 @@ controlLayer = L.control.layers().addTo(map);
 //needs to be EPSG:4326 when exporting -> save as
 
 //green space
-$.getJSON("UW_SEATTLE_LANDSCAPE_GREENSPACE.geojson",function(data){
+$.getJSON("CAMPUS_GEOJSONS/GEOJSON_Landscape.geojson",function(data){
     var greenspace = L.geoJson(data, {style: {stroke: false, fillColor: "green", fillOpacity: .5}}).addTo(map);
     controlLayer.addOverlay(greenspace, "Green Space");
 });
 
 //diversity space
-$.getJSON("UW_SEATTLE_BUILDINGS_DIVERSITY.geojson",function(data){
+$.getJSON("CAMPUS_GEOJSONS/GEOJSON_Diversity.geojson",function(data){
     var diversity = L.geoJson(data, {style: {stroke: false, fillColor: "yellow", fillOpacity: .5}}).addTo(map);
     controlLayer.addOverlay(diversity, "Diversity Space");
 });
 
 //social space
-$.getJSON("UW_SEATTLE_BUILDINGS_SOCIAL.geojson",function(data){
+$.getJSON("CAMPUS_GEOJSONS/GEOJSON_Social.geojson",function(data){
     var social = L.geoJson(data, {style: {stroke: false, fillColor: "red", fillOpacity: .5}}).addTo(map);
     controlLayer.addOverlay(social, "Social Space");
 });
 
 //study space
-$.getJSON("UW_SEATTLE_BUILDINGS_STUDY.geojson",function(data){
+$.getJSON("CAMPUS_GEOJSONS/GEOJSON_Study.geojson",function(data){
     var study = L.geoJson(data, {style: {stroke: false, fillColor: "blue", fillOpacity: .5}}).addTo(map);
     controlLayer.addOverlay(study, "Study Space");
 });
 
-//both study and social space
-$.getJSON("UW_SEATTLE_BUILDINGS_STUDY_SOCIAL_INTERSECTION.geojson",function(data){
+//path space
+$.getJSON("CAMPUS_GEOJSONS/GEOJSON_Paths.geojson",function(data){
     var studySocial = L.geoJson(data, {style: {stroke: false, fillColor: "purple", fillOpacity: .5}}).addTo(map);
     controlLayer.addOverlay(studySocial, "Study and Social Space");
 });
