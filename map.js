@@ -36,7 +36,7 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Study.geojson",function(data){
 });
 
 //path space
-$.getJSON("CAMPUS_GEOJSONS/GEOJSON_Paths.geojson",function(data){
-    var studySocial = L.geoJson(data, {style: {stroke: false, fillColor: "purple", fillOpacity: .5}}).addTo(map);
+$.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSONS_Path2.geojson",function(data){
+    var studySocial = L.geoJson(data, {style: {weight: 5, color: "purple"}}).addTo(map);
     controlLayer.addOverlay(paths, "Paths");
 });
