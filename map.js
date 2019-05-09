@@ -16,7 +16,7 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Landscape.geojson",function(data){
     function onEachFeature(feature, layer) {
         layer.bindPopup("Green space");
     }
-    var greenspace = L.geoJson(data, {style: {stroke: false, fillColor: "green", fillOpacity: .5}}).addTo(map);
+    var greenspace = L.geoJson(data, {onEachFeature: onEachFeature, style: {stroke: false, fillColor: "green", fillOpacity: .5}}).addTo(map);
     controlLayer.addOverlay(greenspace, "Green Space");
 });
 
