@@ -37,6 +37,6 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Study.geojson",function(data){
 
 //path space
 $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSONS_Path2.geojson",function(data){
-    var studySocial = L.geoJson(data, {style: {weight: 5, color: "purple", opacity: .5}}).addTo(map);
+    var paths = L.geoJson(data, {style: {weight: 5, color: "purple", opacity: .5}}).addTo(map);
     controlLayer.addOverlay(paths, "Path Space");
 });
