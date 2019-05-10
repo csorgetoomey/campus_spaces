@@ -1,7 +1,8 @@
 
 var map = L.map('map').setView([47.655548, -122.303200], 16);
 
-L.tileLayer('', { attribution: 'Sources: UW Libraries', maxZoom: 18}).addTo(map);
+L.tileLayer('https://api.mapbox.com/styles/v1/csorge/cjop8lomm4syh2ro1oogrl0fo.html?fresh=true&title=true&access_token=pk.eyJ1IjoiY3NvcmdlIiwiYSI6ImNqb3A2cGMwMzAxbTkzcW9meDIzMDE0ZHMifQ.R5gWO0aBEldQdqU0Nlir-Q#10.0/42.362400/-71.020000/0',
+    { attribution: 'Sources: UW Libraries', maxZoom: 18}).addTo(map);
 
 L.easyButton( 'fa-crosshairs', function(btn, map){
     map.setView(new L.LatLng(47.655548, -122.303200), 16);
