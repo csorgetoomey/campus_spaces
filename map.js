@@ -52,7 +52,7 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Study.geojson",function(data){
 });
 
 //path space
-$.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSONS_Path2.geojson",function(data){
+$.getJSON("CAMPUS_GEOJSONS/GEOJSON_Paths.geojson",function(data){
     function onEachFeature(feature, layer) {
         layer.bindPopup("Path space");
     }
