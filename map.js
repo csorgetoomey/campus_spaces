@@ -89,8 +89,12 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Paths.geojson",function(data){
 });
 
 function clickHandler(e) {
+    var string = ""
     for (var i in map._layers) {
+        string += map._layers[i];
         console.log(map._layers[i]);
+    }
+    map.openPopup(string, e.latlng);
 }
 
 map.on("click", clickHandler);
