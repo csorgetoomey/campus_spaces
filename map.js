@@ -88,4 +88,9 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Paths.geojson",function(data){
     controlLayer.addOverlay(paths, "Path Space");
 });
 
-console.log(group)
+function clickHandler(e) {
+    for (var i in map._layers) {
+        console.log(map._layers[i]);
+}
+
+map.on("click", clickHandler);
