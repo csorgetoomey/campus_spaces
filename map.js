@@ -14,13 +14,13 @@ L.tileLayer('https://api.mapbox.com/styles/v1/csorge/cjvhhz99w0jnm1cq3per2445t/t
     accessToken: 'pk.eyJ1IjoiY3NvcmdlIiwiYSI6ImNqb3A2cGMwMzAxbTkzcW9meDIzMDE0ZHMifQ.R5gWO0aBEldQdqU0Nlir-Q'
 }).addTo(map);
 
-map.on('click', function(e) {
-        var popLocation= e.latlng;
-        var popup = L.popup()
-        .setLatLng(popLocation)
-        .setContent('<p>Hello world!<br />This is a nice popup.</p>')
-        .openOn(map);
-});
+// map.on('click', function(e) {
+//         var popLocation= e.latlng;
+//         var popup = L.popup()
+//         .setLatLng(popLocation)
+//         .setContent('<p>Hello world!<br />This is a nice popup.</p>')
+//         .openOn(map);
+// });
 
 L.easyButton( 'fa-crosshairs', function(btn, map){
     map.setView(new L.LatLng(47.655548, -122.303200), 16);
