@@ -5,6 +5,7 @@ var token ='pk.eyJ1IjoiY3NvcmdlIiwiYSI6ImNqb3A2cGMwMzAxbTkzcW9meDIzMDE0ZHMifQ.R5
 var gl = L.mapboxGL({
     accessToken: token,
     style: 'mapbox://styles/csorge/cjvhhz99w0jnm1cq3per2445t',
+    maxZoom: 17,
 }).addTo(map);
 
 // L.tileLayer('https://api.mapbox.com/styles/v1/csorge/cjvhhz99w0jnm1cq3per2445t/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
@@ -16,6 +17,13 @@ var gl = L.mapboxGL({
 L.easyButton( 'fa-crosshairs', function(btn, map){
     map.setView(new L.LatLng(47.655548, -122.303200), 16);
 }).addTo(map);
+
+map.on('click', 'testlayer', function (e) {
+    new mapboxgl.Popup()
+        .setLngLat(e.lngLat)
+        .setHTML(e.features[0].properties.name)
+        .addTo(map);
+});
 
 controlLayer = L.control.layers().addTo(map);
 
