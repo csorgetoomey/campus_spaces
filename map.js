@@ -37,12 +37,14 @@ controlLayer = L.control.layers().addTo(map);
 
 //needs to be EPSG:4326 when exporting -> save as
 
+var group = L.layerGroup();
 //green space
 $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Landscape.geojson",function(data){
     function onEachFeature(feature, layer) {
         layer.bindPopup("Green space");
     }
     var greenspace = L.geoJson(data, {onEachFeature: onEachFeature, style: {stroke: false, fillColor: "green", fillOpacity: .5}}).addTo(map);
+    greenspace.addTo(group);
     controlLayer.addOverlay(greenspace, "Green Space");
 });
 
@@ -82,3 +84,5 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Paths.geojson",function(data){
     var paths = L.geoJson(data, {onEachFeature: onEachFeature, style: {weight: 5, color: "purple", opacity: .5}}).addTo(map);
     controlLayer.addOverlay(paths, "Path Space");
 });
+
+console.log(group)
