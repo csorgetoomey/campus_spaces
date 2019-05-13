@@ -1,29 +1,37 @@
 
 var map = L.map('map').setView([47.655548, -122.303200], 16);
 
-var token ='pk.eyJ1IjoiY3NvcmdlIiwiYSI6ImNqb3A2cGMwMzAxbTkzcW9meDIzMDE0ZHMifQ.R5gWO0aBEldQdqU0Nlir-Q';
-var gl = L.mapboxGL({
-    accessToken: token,
-    style: 'mapbox://styles/csorge/cjvhhz99w0jnm1cq3per2445t',
+// var token ='pk.eyJ1IjoiY3NvcmdlIiwiYSI6ImNqb3A2cGMwMzAxbTkzcW9meDIzMDE0ZHMifQ.R5gWO0aBEldQdqU0Nlir-Q';
+// var gl = L.mapboxGL({
+//     accessToken: token,
+//     style: 'mapbox://styles/csorge/cjvhhz99w0jnm1cq3per2445t',
+//     maxZoom: 17,
+// }).addTo(map);
+
+L.tileLayer('https://api.mapbox.com/styles/v1/csorge/cjvhhz99w0jnm1cq3per2445t/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Sources: UW Libraries',
     maxZoom: 17,
+    accessToken: 'pk.eyJ1IjoiY3NvcmdlIiwiYSI6ImNqb3A2cGMwMzAxbTkzcW9meDIzMDE0ZHMifQ.R5gWO0aBEldQdqU0Nlir-Q'
 }).addTo(map);
 
-// L.tileLayer('https://api.mapbox.com/styles/v1/csorge/cjvhhz99w0jnm1cq3per2445t/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
-//     attribution: 'Sources: UW Libraries',
-//     maxZoom: 17,
-//     accessToken: 'pk.eyJ1IjoiY3NvcmdlIiwiYSI6ImNqb3A2cGMwMzAxbTkzcW9meDIzMDE0ZHMifQ.R5gWO0aBEldQdqU0Nlir-Q',
-// }).addTo(map);
+map.on('click', function(e) {
+        var popLocation= e.latlng;
+        var popup = L.popup()
+        .setLatLng(popLocation)
+        .setContent('<p>Hello world!<br />This is a nice popup.</p>')
+        .openOn(map);
+});
 
 L.easyButton( 'fa-crosshairs', function(btn, map){
     map.setView(new L.LatLng(47.655548, -122.303200), 16);
 }).addTo(map);
 
-map.on('click', 'testlayer', function (e) {
-    gl.Popup()
-        .setLngLat(e.lngLat)
-        .setHTML("hello")
-        .addTo(map);
-});
+// map.on('click', 'testlayer', function (e) {
+//     gl.Popup()
+//         .setLngLat(e.lngLat)
+//         .setHTML("hello")
+//         .addTo(map);
+// });
 
 controlLayer = L.control.layers().addTo(map);
 
@@ -44,6 +52,7 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Diversity.geojson",function(data){
         layer.bindPopup("Diversity space");
     }
     var diversity = L.geoJson(data, {onEachFeature: onEachFeature, style: {stroke: false, fillColor: "yellow", fillOpacity: .5}}).addTo(map);
+    console.log(diversity);
     controlLayer.addOverlay(diversity, "Diversity Space");
 });
 
