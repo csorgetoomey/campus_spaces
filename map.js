@@ -18,12 +18,12 @@ L.easyButton( 'fa-crosshairs', function(btn, map){
     map.setView(new L.LatLng(47.655548, -122.303200), 16);
 }).addTo(map);
 
-// map.on('click', 'testlayer', function (e) {
-//     new mapboxgl.Popup()
-//         .setLngLat(e.lngLat)
-//         .setHTML(e.features[0].properties.name)
-//         .addTo(map);
-// });
+map.on('click', 'testlayer', function (e) {
+    gl.Popup()
+        .setLngLat(e.lngLat)
+        .setHTML("hello")
+        .addTo(map);
+});
 
 controlLayer = L.control.layers().addTo(map);
 
