@@ -52,7 +52,7 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Diversity.geojson",function(data){
         layer.bindPopup("Diversity space");
     }
     var diversity = L.geoJson(data, {onEachFeature: onEachFeature, style: {stroke: false, fillColor: "yellow", fillOpacity: .5}}).addTo(map);
-    console.log(diversity.features);
+    console.log(diversity);
     controlLayer.addOverlay(diversity, "Diversity Space");
 });
 
