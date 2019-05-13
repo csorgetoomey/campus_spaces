@@ -54,7 +54,7 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Diversity.geojson",function(data){
         layer.bindPopup("Diversity space");
     }
     var diversity = L.geoJson(data, {onEachFeature: onEachFeature, style: {stroke: false, fillColor: "yellow", fillOpacity: .5}}).addTo(map);
-    console.log(diversity);
+    diversity.addTo(group);
     controlLayer.addOverlay(diversity, "Diversity Space");
 });
 
@@ -64,6 +64,7 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Social.geojson",function(data){
         layer.bindPopup("Social space");
     }
     var social = L.geoJson(data, {onEachFeature: onEachFeature, style: {stroke: false, fillColor: "red", fillOpacity: .5}}).addTo(map);
+    social.addTo(group);
     controlLayer.addOverlay(social, "Social Space");
 });
 
