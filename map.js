@@ -1,11 +1,17 @@
 
 var map = L.map('map').setView([47.655548, -122.303200], 16);
 
-L.tileLayer('https://api.mapbox.com/styles/v1/csorge/cjvhhz99w0jnm1cq3per2445t/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Sources: UW Libraries',
-    maxZoom: 17,
-    accessToken: 'pk.eyJ1IjoiY3NvcmdlIiwiYSI6ImNqb3A2cGMwMzAxbTkzcW9meDIzMDE0ZHMifQ.R5gWO0aBEldQdqU0Nlir-Q',
+var token ='pk.eyJ1IjoiY3NvcmdlIiwiYSI6ImNqb3A2cGMwMzAxbTkzcW9meDIzMDE0ZHMifQ.R5gWO0aBEldQdqU0Nlir-Q';
+var gl = L.mapboxGL({
+    accessToken: token,
+    style: 'mapbox://styles/csorge/cjvhhz99w0jnm1cq3per2445t',
 }).addTo(map);
+
+// L.tileLayer('https://api.mapbox.com/styles/v1/csorge/cjvhhz99w0jnm1cq3per2445t/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
+//     attribution: 'Sources: UW Libraries',
+//     maxZoom: 17,
+//     accessToken: 'pk.eyJ1IjoiY3NvcmdlIiwiYSI6ImNqb3A2cGMwMzAxbTkzcW9meDIzMDE0ZHMifQ.R5gWO0aBEldQdqU0Nlir-Q',
+// }).addTo(map);
 
 L.easyButton( 'fa-crosshairs', function(btn, map){
     map.setView(new L.LatLng(47.655548, -122.303200), 16);
