@@ -74,6 +74,7 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Study.geojson",function(data){
         layer.bindPopup("Study space");
     }
     var study = L.geoJson(data, {onEachFeature: onEachFeature, style: {stroke: false, fillColor: "blue", fillOpacity: .5}}).addTo(map);
+    study.addTo(group);
     controlLayer.addOverlay(study, "Study Space");
 });
 
@@ -83,6 +84,7 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Paths.geojson",function(data){
         layer.bindPopup("Path space");
     }
     var paths = L.geoJson(data, {onEachFeature: onEachFeature, style: {weight: 5, color: "purple", opacity: .5}}).addTo(map);
+    paths.addTo(group);
     controlLayer.addOverlay(paths, "Path Space");
 });
 
