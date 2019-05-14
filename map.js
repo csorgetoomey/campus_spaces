@@ -88,12 +88,13 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Paths.geojson",function(data){
     controlLayer.addOverlay(paths, "Path Space");
 });
 
+console.log(group.getLayers())
+
 function clickHandler(e) {
     var html = '';
     var clickBounds = L.latLngBounds(e.latlng, e.latlng);
-    console.log(clickBounds);
     map.eachLayer(function(layer) {
-        console.log(layer);
+
     });
     map.openPopup(html, e.latlng);
 
