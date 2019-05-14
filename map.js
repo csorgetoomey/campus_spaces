@@ -45,7 +45,8 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Landscape.geojson",function(data){
     // }
     var greenspace = L.geoJson(data, {style: {stroke: false, fillColor: "green", fillOpacity: .5}}).addTo(map);
     greenspace.addTo(group);
-    console.log("greenspace =" + greenspace)
+    console.log(greenspace)
+    console.log(groups)
     controlLayer.addOverlay(greenspace, "Green Space");
 });
 
@@ -95,7 +96,7 @@ function clickHandler(e) {
     var html = '';
     var clickBounds = L.latLngBounds(e.latlng, e.latlng);
     map.eachLayer(function(layer) {
-        console.log(layer)
+        //console.log(layer)
     });
     map.openPopup(html, e.latlng);
 
