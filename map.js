@@ -43,7 +43,7 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Landscape.geojson",function(data){
     // function onEachFeature(feature, layer) {
     //     layer.bindPopup("Green space");
     // }
-    var greenspace = L.geoJson(data, {onEachFeature: onEachFeature, style: {stroke: false, fillColor: "green", fillOpacity: .5}}).addTo(map);
+    var greenspace = L.geoJson(data, {style: {stroke: false, fillColor: "green", fillOpacity: .5}}).addTo(map);
     greenspace.addTo(group);
     controlLayer.addOverlay(greenspace, "Green Space");
 });
@@ -53,7 +53,7 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Diversity.geojson",function(data){
     // function onEachFeature(feature, layer) {
     //     layer.bindPopup("Diversity space");
     // }
-    var diversity = L.geoJson(data, {onEachFeature: onEachFeature, style: {stroke: false, fillColor: "yellow", fillOpacity: .5}}).addTo(map);
+    var diversity = L.geoJson(data, {style: {stroke: false, fillColor: "yellow", fillOpacity: .5}}).addTo(map);
     diversity.addTo(group);
     controlLayer.addOverlay(diversity, "Diversity Space");
 });
@@ -63,7 +63,7 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Social.geojson",function(data){
     // function onEachFeature(feature, layer) {
     //     layer.bindPopup("Social space");
     // }
-    var social = L.geoJson(data, {onEachFeature: onEachFeature, style: {stroke: false, fillColor: "red", fillOpacity: .5}}).addTo(map);
+    var social = L.geoJson(data, {style: {stroke: false, fillColor: "red", fillOpacity: .5}}).addTo(map);
     social.addTo(group);
     controlLayer.addOverlay(social, "Social Space");
 });
@@ -73,7 +73,7 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Study.geojson",function(data){
     // function onEachFeature(feature, layer) {
     //     layer.bindPopup("Study space");
     // }
-    var study = L.geoJson(data, {onEachFeature: onEachFeature, style: {stroke: false, fillColor: "blue", fillOpacity: .5}}).addTo(map);
+    var study = L.geoJson(data, {style: {stroke: false, fillColor: "blue", fillOpacity: .5}}).addTo(map);
     study.addTo(group);
     controlLayer.addOverlay(study, "Study Space");
 });
@@ -83,7 +83,7 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Paths.geojson",function(data){
     // function onEachFeature(feature, layer) {
     //     layer.bindPopup("Path space");
     // }
-    var paths = L.geoJson(data, {onEachFeature: onEachFeature, style: {weight: 5, color: "purple", opacity: .5}}).addTo(map);
+    var paths = L.geoJson(data, {style: {weight: 5, color: "purple", opacity: .5}}).addTo(map);
     paths.addTo(group);
     controlLayer.addOverlay(paths, "Path Space");
 });
@@ -113,7 +113,7 @@ function clickHandler(e) {
       var html = "Found features: " + intersectingFeatures.length + "<br/>" + intersectingFeatures.map(function(o) {
         return o.properties.type
       }).join('<br/>');
-  
+
       map.openPopup(html, e.latlng, {
         offset: L.point(0, -24)
       });
