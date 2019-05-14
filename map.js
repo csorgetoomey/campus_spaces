@@ -46,7 +46,8 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Landscape.geojson",function(data){
     var greenspace = L.geoJson(data, {style: {stroke: false, fillColor: "green", fillOpacity: .5}}).addTo(map);
     greenspace.addTo(group);
     console.log(greenspace)
-    console.log(group)
+    console.log(group._layers)
+    console.log(group.getLayers())
     controlLayer.addOverlay(greenspace, "Green Space");
 });
 
@@ -56,7 +57,7 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Diversity.geojson",function(data){
     //     layer.bindPopup("Diversity space");
     // }
     var diversity = L.geoJson(data, {style: {stroke: false, fillColor: "yellow", fillOpacity: .5}}).addTo(map);
-    diversity.addTo(group._layers);
+    diversity.addTo(group.);
     controlLayer.addOverlay(diversity, "Diversity Space");
 });
 
@@ -89,8 +90,6 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Paths.geojson",function(data){
     paths.addTo(group);
     controlLayer.addOverlay(paths, "Path Space");
 });
-
-console.log(group.getLayers())
 
 function clickHandler(e) {
     var html = '';
