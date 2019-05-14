@@ -110,9 +110,7 @@ function clickHandler(e) {
     }
     // if at least one feature found, show it
     if (intersectingFeatures.length) {
-      var html = "Found features: " + intersectingFeatures.length + "<br/>" + intersectingFeatures.map(function(o) {
-        return o.properties.type
-      }).join('<br/>');
+      var html = "Found features: " + intersectingFeatures.length}).join('<br/>');
 
       map.openPopup(html, e.latlng, {
         offset: L.point(0, -24)
