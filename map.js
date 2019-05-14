@@ -110,7 +110,7 @@ function clickHandler(e) {
     }
     // if at least one feature found, show it
     if (intersectingFeatures.length) {
-      var html = "Found features: " + intersectingFeatures.length + intersectingFeatures.properties + " ";
+      var html = "Found features: " + intersectingFeatures.length + intersectingFeatures.properties + intersectingFeatures.map(function(o) {return o.properties}).join('<br/>');
       map.openPopup(html, e.latlng);
     }
 }
