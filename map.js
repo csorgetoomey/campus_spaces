@@ -89,30 +89,13 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Paths.geojson",function(data){
 });
 
 function clickHandler(e) {
+    var html = '';
     var clickBounds = L.latLngBounds(e.latlng, e.latlng);
+    map.eachLayer(function(layer){
+        html += layer;
+    });
+    map.openPopup(html, e.latlng);
 
-    var intersectingFeatures = [];
-    for (var l in map._layers) {
-      var overlay = map._layers[l];
-      if (overlay._layers) {
-        for (var f in overlay._layers) {
-          var feature = overlay._layers[f];
-          var bounds;
-          if (feature.getBounds) bounds = feature.getBounds();
-          else if (feature._latlng) {
-            bounds = L.latLngBounds(feature._latlng, feature._latlng);
-          }
-          if (bounds && clickBounds.intersects(bounds)) {
-            intersectingFeatures.push(feature);
-          }
-        }
-      }
-    }
-    // if at least one feature found, show it
-    if (intersectingFeatures.length) {
-      var html = "Found features: " + intersectingFeatures.length + intersectingFeatures.properties + intersectingFeatures.map(function(o) {return o.properties}).join('<br/>');
-      map.openPopup(html, e.latlng);
-    }
 }
 
 map.on("click", clickHandler);
