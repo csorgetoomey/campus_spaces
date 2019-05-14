@@ -46,7 +46,7 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Landscape.geojson",function(data){
     var greenspace = L.geoJson(data, {style: {stroke: false, fillColor: "green", fillOpacity: .5}}).addTo(map);
     greenspace.addTo(group);
     console.log(greenspace)
-    console.log(groups)
+    console.log(group)
     controlLayer.addOverlay(greenspace, "Green Space");
 });
 
