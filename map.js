@@ -110,10 +110,8 @@ function clickHandler(e) {
     }
     // if at least one feature found, show it
     if (intersectingFeatures.length) {
-      var html = "Found features: " + intersectingFeatures.length
-      map.openPopup(html, e.latlng, {
-        offset: L.point(0, -24)
-      });
+      var html = "Found features: " + intersectingFeatures.length + intersectingFeatures + " ";
+      map.openPopup(html, e.latlng);
     }
 }
 
