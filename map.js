@@ -11,7 +11,7 @@ L.easyButton( 'fa-crosshairs', function(btn, map){
     map.setView(new L.LatLng(47.655548, -122.303200), 16);
 }).addTo(map);
 
-controlLayer = L.control.layers({collapsed: false}).addTo(map);
+controlLayer = L.control.layers(null, null, {collapsed: false}).addTo(map);
 
 //needs to be EPSG:4326 when exporting -> save as
 
