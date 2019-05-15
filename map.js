@@ -39,7 +39,7 @@ controlLayer = L.control.layers().addTo(map);
 
 var group = L.layerGroup();
 
-$.getJSON("CAMPUS_ GEOJSONS/CAMPUS_GEOJSON_COMBINED.geojson",function(data){
+$.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_COMBINED.geojson",function(data){
     // function onEachFeature(feature, layer) {
     //     layer.bindPopup("Green space");
     // }
@@ -93,7 +93,7 @@ $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_PATHS.geojson",function(data){
     // function onEachFeature(feature, layer) {
     //     layer.bindPopup("Path space");
     // }
-    var paths = L.geoJson(data, {style: {weight: 5, color: "purple", opacity: .5}}).addTo(map);
+    var paths = L.geoJson(data, {style: {stroke: false, fillColor: "purple", fillOpacity: .5}}).addTo(map);
     paths.addTo(group);
     controlLayer.addOverlay(paths, "Path Space");
 });
