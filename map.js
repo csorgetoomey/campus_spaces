@@ -39,7 +39,7 @@ controlLayer = L.control.layers().addTo(map);
 
 var group = L.layerGroup();
 
-var combined = L.geoJson(combined_spaces, {style: {stroke: false, fillColor: "white", fillOpacity: .5}}).on('click', clickHandler).addTo(map);
+var combined = L.geoJson(combined_spaces, {style: {stroke: false, fillColor: "white", fillOpacity: .5}}).addTo(map);
 
 
 //green space
@@ -105,3 +105,5 @@ function clickHandler(e) {
         map.openPopup(html, e.latlng);
     }
 }
+
+map.on("click", clickHandler);
