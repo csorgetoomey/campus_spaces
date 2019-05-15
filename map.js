@@ -17,6 +17,7 @@ controlLayer = L.control.layers().addTo(map);
 
 var group = L.layerGroup();
 
+//loads this geojson from separate js script 
 var combined = L.geoJson(combined_spaces, {style: {fillColor: "white", fillOpacity: 0}}).addTo(map);
 
 //green space
@@ -69,9 +70,9 @@ $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_PATHS.geojson",function(data){
     controlLayer.addOverlay(paths, "Pedestrian Space");
 });
 
+
 function clickHandler(e) {
     var html = '';
-
     var match = leafletPip.pointInLayer(e.latlng, combined, false);
     if(match.length) {
         for(var i = 0; i < match.length; i++) {
