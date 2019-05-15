@@ -100,11 +100,16 @@ $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_PATHS.geojson",function(data){
 
 function clickHandler(e) {
     var html = '';
-    var clickBounds = L.latLngBounds(e.latlng, e.latlng);
-    map.eachLayer(function(layer) {
-        //console.log(layer)
-    });
-    map.openPopup(html, e.latlng);
+
+    var match = leafletPip.pointInLayer(e.latlng, combined, false);
+    if(match.length) {
+        for(var i = 0; i < match.length; i++) {
+            html += match[i].feature.properties.space + "</b>"
+        }
+    }
+    if(html) {
+        map.openPopup(html, e.latlng);
+    }
 }
 
 map.on("click", clickHandler);
