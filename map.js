@@ -25,7 +25,7 @@ $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_LANDSCAPE.geojson",function(data){
     // function onEachFeature(feature, layer) {
     //     layer.bindPopup("Green space");
     // }
-    var greenspace = L.geoJson(data, {style: {stroke: false, fillColor: "black", fillOpacity: .5}}).addTo(map);
+    var greenspace = L.geoJson(data, {style: {stroke: false, fillColor: "green", fillOpacity: .5}}).addTo(map);
     greenspace.addTo(group);
     controlLayer.addOverlay(greenspace, "Green Space");
 });
@@ -35,7 +35,7 @@ $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_DIVERSITY.geojson",function(data){
     // function onEachFeature(feature, layer) {
     //     layer.bindPopup("Diversity space");
     // }
-    var diversity = L.geoJson(data, {style: {stroke: false, fillColor: "#00FF00", fillOpacity: .5}}).addTo(map);
+    var diversity = L.geoJson(data, {style: {stroke: false, fillColor: "#FFFF00", fillOpacity: .5}}).addTo(map); //yellow
     diversity.addTo(group);
     controlLayer.addOverlay(diversity, "Diversity Space");
 });
@@ -45,7 +45,7 @@ $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_SOCIAL.geojson",function(data){
     // function onEachFeature(feature, layer) {
     //     layer.bindPopup("Social space");
     // }
-    var social = L.geoJson(data, {style: {stroke: false, fillColor: "#FF0000", fillOpacity: .5}}).addTo(map);
+    var social = L.geoJson(data, {style: {stroke: false, fillColor: "#FF0000", fillOpacity: .5}}).addTo(map); //red
     social.addTo(group);
     controlLayer.addOverlay(social, "Social Space");
 });
@@ -55,7 +55,7 @@ $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_STUDY.geojson",function(data){
     // function onEachFeature(feature, layer) {
     //     layer.bindPopup("Study space");
     // }
-    var study = L.geoJson(data, {style: {stroke: false, fillColor: "#0000FF", fillOpacity: .5}}).addTo(map);
+    var study = L.geoJson(data, {style: {stroke: false, fillColor: "#0000FF", fillOpacity: .5}}).addTo(map); //blue
     study.addTo(group);
     controlLayer.addOverlay(study, "Study Space");
 });
