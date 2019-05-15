@@ -1,37 +1,15 @@
 
 var map = L.map('map').setView([47.655548, -122.303200], 16);
 
-// var token ='pk.eyJ1IjoiY3NvcmdlIiwiYSI6ImNqb3A2cGMwMzAxbTkzcW9meDIzMDE0ZHMifQ.R5gWO0aBEldQdqU0Nlir-Q';
-// var gl = L.mapboxGL({
-//     accessToken: token,
-//     style: 'mapbox://styles/csorge/cjvhhz99w0jnm1cq3per2445t',
-//     maxZoom: 17,
-// }).addTo(map);
-
 L.tileLayer('https://api.mapbox.com/styles/v1/csorge/cjvhhz99w0jnm1cq3per2445t/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Sources: UW Libraries',
-    maxZoom: 17,
+    maxZoom: 18,
     accessToken: 'pk.eyJ1IjoiY3NvcmdlIiwiYSI6ImNqb3A2cGMwMzAxbTkzcW9meDIzMDE0ZHMifQ.R5gWO0aBEldQdqU0Nlir-Q'
 }).addTo(map);
-
-// map.on('click', function(e) {
-//         var popLocation= e.latlng;
-//         var popup = L.popup()
-//         .setLatLng(popLocation)
-//         .setContent('<p>Hello world!<br />This is a nice popup.</p>')
-//         .openOn(map);
-// });
 
 L.easyButton( 'fa-crosshairs', function(btn, map){
     map.setView(new L.LatLng(47.655548, -122.303200), 16);
 }).addTo(map);
-
-// map.on('click', 'testlayer', function (e) {
-//     gl.Popup()
-//         .setLngLat(e.lngLat)
-//         .setHTML("hello")
-//         .addTo(map);
-// });
 
 controlLayer = L.control.layers().addTo(map);
 
@@ -39,8 +17,7 @@ controlLayer = L.control.layers().addTo(map);
 
 var group = L.layerGroup();
 
-var combined = L.geoJson(combined_spaces, {style: {stroke: false, fillColor: "white", fillOpacity: .5}}).addTo(map);
-
+var combined = L.geoJson(combined_spaces, {style: {fillColor: "white", fillOpacity: 0}}).addTo(map);
 
 //green space
 $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_LANDSCAPE.geojson",function(data){
@@ -89,7 +66,7 @@ $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_PATHS.geojson",function(data){
     // }
     var paths = L.geoJson(data, {style: {stroke: false, fillColor: "purple", fillOpacity: .5}}).addTo(map);
     paths.addTo(group);
-    controlLayer.addOverlay(paths, "Path Space");
+    controlLayer.addOverlay(paths, "Pedestrian Space");
 });
 
 function clickHandler(e) {
