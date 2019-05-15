@@ -17,8 +17,8 @@ controlLayer = L.control.layers().addTo(map);
 
 var group = L.layerGroup();
 
-//loads this geojson from separate js script 
-var combined = L.geoJson(combined_spaces, {style: {fillColor: "white", fillOpacity: 0}}).addTo(map);
+//loads this geojson from separate js script
+var combined = L.geoJson(combined_spaces, {style: {stroke: false, fillColor: "white", fillOpacity: 0}}).addTo(map);
 
 //green space
 $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_LANDSCAPE.geojson",function(data){
