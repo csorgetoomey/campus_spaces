@@ -39,7 +39,7 @@ controlLayer = L.control.layers().addTo(map);
 
 var group = L.layerGroup();
 
-$.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_COMBINED",function(data){
+$.getJSON("CAMPUS_ GEOJSONS/CAMPUS_GEOJSON_COMBINED.geojson",function(data){
     // function onEachFeature(feature, layer) {
     //     layer.bindPopup("Green space");
     // }
@@ -49,7 +49,7 @@ $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_COMBINED",function(data){
 });
 
 //green space
-$.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_LANDSCAPE",function(data){
+$.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_LANDSCAPE.geojson",function(data){
     // function onEachFeature(feature, layer) {
     //     layer.bindPopup("Green space");
     // }
