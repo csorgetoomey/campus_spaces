@@ -98,7 +98,7 @@ function clickHandler(e) {
     var match = leafletPip.pointInLayer(e.latlng, combined, false);
     if(match.length) {
         for(var i = 0; i < match.length; i++) {
-            html += match[i].feature.properties.space + "</b>"
+            html += match[i].feature.properties.space + "<br>"
         }
     }
     if(html) {
