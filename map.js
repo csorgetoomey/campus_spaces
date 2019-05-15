@@ -38,21 +38,28 @@ controlLayer = L.control.layers().addTo(map);
 //needs to be EPSG:4326 when exporting -> save as
 
 var group = L.layerGroup();
+
+$.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_COMBINED",function(data){
+    // function onEachFeature(feature, layer) {
+    //     layer.bindPopup("Green space");
+    // }
+    var combined = L.geoJson(data, {style: {stroke: false, fillColor: "white", fillOpacity: .2}}).addTo(map);
+    combined.addTo(group);
+
+});
+
 //green space
-$.getJSON("CAMPUS_GEOJSONS/GEOJSON_Landscape.geojson",function(data){
+$.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_LANDSCAPE",function(data){
     // function onEachFeature(feature, layer) {
     //     layer.bindPopup("Green space");
     // }
     var greenspace = L.geoJson(data, {style: {stroke: false, fillColor: "green", fillOpacity: .5}}).addTo(map);
     greenspace.addTo(group);
-    console.log(greenspace);
-    console.log(group._layers[0]);
-    console.log(group.getLayers());
     controlLayer.addOverlay(greenspace, "Green Space");
 });
 
 //diversity space
-$.getJSON("CAMPUS_GEOJSONS/GEOJSON_Diversity.geojson",function(data){
+$.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_DIVERSITY.geojson",function(data){
     // function onEachFeature(feature, layer) {
     //     layer.bindPopup("Diversity space");
     // }
@@ -62,7 +69,7 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Diversity.geojson",function(data){
 });
 
 //social space
-$.getJSON("CAMPUS_GEOJSONS/GEOJSON_Social.geojson",function(data){
+$.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_SOCIAL.geojson",function(data){
     // function onEachFeature(feature, layer) {
     //     layer.bindPopup("Social space");
     // }
@@ -72,7 +79,7 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Social.geojson",function(data){
 });
 
 //study space
-$.getJSON("CAMPUS_GEOJSONS/GEOJSON_Study.geojson",function(data){
+$.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_STUDY.geojson",function(data){
     // function onEachFeature(feature, layer) {
     //     layer.bindPopup("Study space");
     // }
@@ -82,7 +89,7 @@ $.getJSON("CAMPUS_GEOJSONS/GEOJSON_Study.geojson",function(data){
 });
 
 //path space
-$.getJSON("CAMPUS_GEOJSONS/GEOJSON_Paths.geojson",function(data){
+$.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_PATHS.geojson",function(data){
     // function onEachFeature(feature, layer) {
     //     layer.bindPopup("Path space");
     // }
@@ -98,7 +105,6 @@ function clickHandler(e) {
         //console.log(layer)
     });
     map.openPopup(html, e.latlng);
-
 }
 
 map.on("click", clickHandler);
