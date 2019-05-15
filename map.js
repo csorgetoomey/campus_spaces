@@ -43,9 +43,8 @@ $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_COMBINED.geojson",function(data){
     // function onEachFeature(feature, layer) {
     //     layer.bindPopup("Green space");
     // }
-    var combined = L.geoJson(data, {style: {stroke: false, fillColor: "white", fillOpacity: .2}}).addTo(map);
+    var combined = L.geoJson(data, {style: {stroke: false, fillColor: "white", fillOpacity: .5}}).on('click', clickHandler).addTo(map);
     combined.addTo(group);
-
 });
 
 //green space
@@ -111,5 +110,3 @@ function clickHandler(e) {
         map.openPopup(html, e.latlng);
     }
 }
-
-map.on("click", clickHandler);
