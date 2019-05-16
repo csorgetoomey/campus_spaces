@@ -26,19 +26,19 @@ $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_LANDSCAPE.geojson",function(data){
 
 //diversity space
 $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_DIVERSITY.geojson",function(data){
-    var diversity = L.geoJson(data, {style: {stroke: false, fillColor: "yellow", fillOpacity: .5}}).addTo(map);
+    var diversity = L.geoJson(data, {style: {stroke: false, fillColor: "red", fillOpacity: .5}}).addTo(map);
     controlLayer.addOverlay(diversity, "Diversity Space");
 });
 
 //social space
 $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_SOCIAL.geojson",function(data){
-    var social = L.geoJson(data, {style: {stroke: false, fillColor: "magenta", fillOpacity: .5}}).addTo(map);
+    var social = L.geoJson(data, {style: {stroke: false, fillColor: "green", fillOpacity: .5}}).addTo(map);
     controlLayer.addOverlay(social, "Social Space");
 });
 
 //study space
 $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_STUDY.geojson",function(data){
-    var study = L.geoJson(data, {style: {stroke: false, fillColor: "cyan", fillOpacity: .5}}).addTo(map);
+    var study = L.geoJson(data, {style: {stroke: false, fillColor: "blue", fillOpacity: .5}}).addTo(map);
     controlLayer.addOverlay(study, "Study Space");
 });
 
