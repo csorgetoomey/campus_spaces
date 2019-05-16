@@ -20,19 +20,19 @@ var combined = L.geoJson(combined_spaces, {style: {stroke: false, fillColor: "wh
 
 //green space
 $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_LANDSCAPE.geojson",function(data){
-    var greenspace = L.geoJson(data, {style: {stroke: false, fillColor: "black", fillOpacity: .5}}).addTo(map);
+    var greenspace = L.geoJson(data, {style: {stroke: false, fillColor: "green", fillOpacity: .5}}).addTo(map);
     controlLayer.addOverlay(greenspace, "Green Space");
 });
 
 //diversity space
 $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_DIVERSITY.geojson",function(data){
-    var diversity = L.geoJson(data, {style: {stroke: false, fillColor: "red", fillOpacity: .5}}).addTo(map);
+    var diversity = L.geoJson(data, {style: {stroke: false, fillColor: "yellow", fillOpacity: .5}}).addTo(map);
     controlLayer.addOverlay(diversity, "Diversity Space");
 });
 
 //social space
 $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_SOCIAL.geojson",function(data){
-    var social = L.geoJson(data, {style: {stroke: false, fillColor: "green", fillOpacity: .5}}).addTo(map);
+    var social = L.geoJson(data, {style: {stroke: false, fillColor: "red", fillOpacity: .5}}).addTo(map);
     controlLayer.addOverlay(social, "Social Space");
 });
 
@@ -44,7 +44,7 @@ $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_STUDY.geojson",function(data){
 
 //path space
 $.getJSON("CAMPUS_GEOJSONS/CAMPUS_GEOJSON_PATHS.geojson",function(data){
-    var paths = L.geoJson(data, {style: {stroke: false, fillColor: "grey", fillOpacity: .5}}).addTo(map);
+    var paths = L.geoJson(data, {style: {stroke: false, fillColor: "black", fillOpacity: .5}}).addTo(map);
     controlLayer.addOverlay(paths, "Pedestrian Space");
 });
 
